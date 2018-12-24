@@ -1,0 +1,183 @@
+{
+  "initApis": [
+    {
+      "name": "init",
+      "description": "智能合约部署初始化",
+      "parameters": [
+      ]
+    }
+  ],
+
+  "invokeApis": [
+    {
+      "name": "saveLoan",
+      "description": "存储资产进件信息",
+      "parameters": [
+        {
+          "name": "channelId",
+          "description":"渠道代码",
+          "type": "string",
+          "pattern":"^[A-Za-z][A-Za-z1-9_0-9]*$",
+          "optional": false
+        },
+        {
+          "name": "loanId",
+          "description":"借款编号",
+          "type": "string",
+          "pattern":"^[A-Za-z][A-Za-z1-9_0-9]*$",
+          "optional": false
+        },
+        {
+          "name": "identityNo",
+          "description":"身份证号码",
+          "type": "string",
+          "pattern": "^[0-9]*[1-9][0-9]*$",
+          "optional": true
+        },
+        {
+          "name": "phoneNo",
+          "description":"电话号码",
+          "type": "string",
+          "pattern": "^[0-9]*[1-9][0-9]*$",
+          "optional": true
+        },
+        {
+          "name": "extraData",
+          "description":"其他信息",
+          "type": "string",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "name": "updateLoan",
+      "description": "更新资产进件信息",
+      "parameters": [
+        {
+          "name": "channelId",
+          "description":"渠道代码",
+          "type": "string",
+          "pattern":"^[A-Za-z][A-Za-z1-9_0-9]*$",
+          "optional": false
+        },
+        {
+          "name": "loanId",
+          "description":"借款编号",
+          "type": "string",
+          "pattern":"^[A-Za-z][A-Za-z1-9_0-9]*$",
+          "optional": false
+        },
+        {
+          "name": "identityNo",
+          "description":"身份证号码",
+          "type": "string",
+          "pattern": "^[0-9]*[1-9][0-9]*$",
+          "optional": true
+        },
+        {
+          "name": "phoneNo",
+          "description":"电话号码",
+          "type": "string",
+          "pattern": "^[0-9]*[1-9][0-9]*$",
+          "optional": true
+        },
+        {
+          "name": "extraData",
+          "description":"其他信息",
+          "type": "string",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "name": "deleteLoan",
+      "description": "删除资产进件信息",
+      "parameters": [
+        {
+          "name": "channelId",
+          "description":"渠道代码",
+          "type": "string",
+          "pattern":"^[A-Za-z][A-Za-z1-9_0-9]*$",
+          "optional": false
+        },
+        {
+          "name": "loanId",
+          "description":"借款编号",
+          "type": "string",
+          "pattern":"^[A-Za-z][A-Za-z1-9_0-9]*$",
+          "optional": false
+        }
+      ]
+    }
+  ],
+
+  "queryApis": [
+    {
+      "name": "queryByChannelIdAndLoanId",
+      "description": "通过渠道号及借款编号查询资产信息",
+      "parameters": [
+        {
+          "name": "channelId",
+          "description":"渠道代码",
+          "type": "string",
+          "pattern":"^[A-Za-z][A-Za-z1-9_0-9]*$",
+          "optional": false
+        },
+        {
+          "name": "loanId",
+          "description":"借款编号",
+          "type": "string",
+          "pattern":"^[A-Za-z][A-Za-z1-9_0-9]*$",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "name": "queryByKeywords",
+      "description": "通过渠道号、身份证号或者电话号码查询资产信息",
+      "parameters": [
+        {
+          "name": "channelId",
+          "description":"渠道代码",
+          "type": "string",
+          "pattern":"^[A-Za-z][A-Za-z1-9_0-9]*$",
+          "optional": true
+        },
+        {
+          "name": "identityNo",
+          "description":"身份证号码",
+          "type": "string",
+          "pattern": "^[0-9]*[1-9][0-9]*$",
+          "optional": true
+        },
+        {
+          "name": "phoneNo",
+          "description":"电话号码",
+          "type": "string",
+          "pattern": "^[0-9]*[1-9][0-9]*$",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "name": "getKeyHistory",
+      "description": "查询资产交易记录编号",
+      "parameters": [
+        {
+          "name": "channelId",
+          "description":"渠道代码",
+          "type": "string",
+          "pattern":"^[A-Za-z][A-Za-z1-9_-0-9]*$",
+          "optional": false
+        },
+        {
+          "name": "loanId",
+          "description":"借款编号",
+          "type": "string",
+          "pattern":"^[A-Za-z][A-Za-z1-9_-0-9]*$",
+          "optional": false
+        }
+      ]
+    }
+  ]
+}
